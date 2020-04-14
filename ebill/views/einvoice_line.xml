@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="view_einvoice_line_form" model="ir.ui.view">
+		<field name="name">einvoice.line.form</field>
+		<field name="model">einvoice.line</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<group>
+						<group>
+							<field name="code"/>
+							<field name="uom"/>
+							<field name="unit_value"/>
+							<field name="unit_price"/>
+							<field name="discount_value"/>
+							<field name="percentage_discount"/>
+							<field name="sunat_product_code"/>
+							<field name="igv_type"/>
+						</group>
+						<group>
+							<field name="subtotal"/>
+							<field name="igv"/>
+							<field name="icbper"/>
+							<field name="total"/>
+							<field name="advance_regularization"/>
+							<field name="advance_document_serie"/>
+							<field name="advance_document_number"/>
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+</odoo>

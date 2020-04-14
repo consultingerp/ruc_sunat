@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="view_move_form_inherit" model="ir.ui.view">
+		<field name="name">move.form.inherit</field>
+		<field name="model">account.move</field>
+		<field name="inherit_id" ref="account.view_move_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//form/header" position="inside">
+				<button name="send_ebill" string="Enviar CPE" type="object" class="oe_highlight" 
+					attrs="{'invisible':['|',('type','not in',['out_invoice','out_refund']),
+										 ('state','!=','posted')]}"/>
+				<button name="query_ebill" string="Consultar CPE" type="object" class="oe_highlight" 
+					attrs="{'invisible':['|',('type','not in',['out_invoice','out_refund']),
+										 ('state','!=','posted')]}"/>
+			</xpath>
+			<field name="journal_id" position="after">
+				<field name="op_type_sunat_id" attrs="{'invisible':[('type', 'not in', ['out_invoice','out_refund'])]}"/>
+			</field>
+			<field name="ref" position="after">
+				<field name="related_code" invisible="1"/>
+				<field name="debit_note_type_id" attrs="{'invisible':[('type', 'not in', ['out_invoice'])],
+														'required':[('type','in', ['out_invoice']),('related_code','=','08')]}"/>
+				<field name="credit_note_type_id" attrs="{'invisible':[('type', 'not in', ['out_refund'])],
+														'required':[('type','in', ['out_refund']),('related_code','=','07')]}" />
+			</field>
+			<xpath expr="//field[@name='invoice_line_ids']/tree" position="inside">
+				<button name="get_einvoice_line" type="object" icon="fa-copy"/>
+			</xpath>
+			<xpath expr="//notebook" position="inside">
+				<page string="Facturacion Electronica" attrs="{'invisible':[('type', 'not in', ['out_invoice','out_refund'])]}">
+					<group>
+						<group>
+							<field name="hash_code" readonly="1"/>
+							<field name="print_version" widget="url" readonly="1"/>
+							<field name="print_web_version" widget="url" readonly="1"/>
+							<field name="is_advance"/>
+						</group>
+						<group>
+							<field name="file_name" invisible="1"/>
+							<field name="binary_version" filename="file_name" widget="binary" readonly="1"/>
+							<field name="billing_type" readonly="1"/>
+							<field name="einvoice_id" readonly="1"/>
+						</group>
+					</group>
+				</page>
+				<page string="Anticipos" attrs="{'invisible':['|',('is_advance','=',True),('type','not in',['out_invoice','out_refund'])]}">
+					<field name="advance_ids" widget="many2many_kanban" domain="[('partner_id','=',partner_id),('is_advance','=',True)]">
+						<kanban quick_create="false" create="true" delete="true">
+							<field name="name"/>
+							<templates>
+								<t t-name="kanban-box">
+									<div class="oe_kanban_global_click" style="position: relative; background-color: #00a09d; color: white;">
+										<a t-if="! read_only_mode" type="delete" style="position: absolute; right: 5px; top: 5px; display: inline-block; color: white;">X</a>
+										<div class="oe_module_vignette">
+											<div class="oe_module_desc">
+												<field name="ref"/>
+											</div>
+										</div>
+									</div>
+								</t>
+							</templates>
+						</kanban>
+					</field>
+				</page>
+			</xpath>
+		</field>
+	</record>
+	<record id="view_move_tree_inherit" model="ir.ui.view">
+		<field name="name">move.tree.inherit</field>
+		<field name="model">account.move</field>
+		<field name="inherit_id" ref="account.view_invoice_tree"/>
+		<field name="arch" type="xml">
+			<field name="state" position="after">
+				<field name="sunat_state" optional="show"/>
+			</field>
+		</field>
+	</record>
+</odoo>

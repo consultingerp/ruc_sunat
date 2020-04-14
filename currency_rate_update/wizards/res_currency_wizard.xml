@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="view_res_currency_wizard_form">
+			<field name="name">res.currency.wizard.form</field>
+			<field name="model">res.currency.wizard</field>
+			<field name="arch" type="xml">
+				<form>
+					<group>
+						<group>
+							<field name="entity" required="1"/>
+							<field name="date_from" required="1"/>
+							<field name="date_to" required="1"/>
+						</group>
+					</group>
+					<footer>
+						<button string="Actualizar" name="verify_entity" type="object" class="oe_highlight"/>
+						or
+						<button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="res_currency_wizard_action" model="ir.actions.act_window">
+			<field name="name">Actualizar T.C.</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">res.currency.wizard</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<menuitem action="currency_rate_update.res_currency_wizard_action" id="menu_action_currency_rate_update" parent="account.menu_finance_reports"/>
+	</data>
+</odoo>

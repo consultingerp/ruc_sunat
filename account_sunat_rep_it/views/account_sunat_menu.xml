@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<!--Si no es enterprise parent = "account.menu_finance"-->
+		<menuitem id="menu_finance_sunat" 
+				name="Sunat" 
+				parent="account_accountant.menu_accounting" 
+				sequence="28" 
+				groups="account_base_it.group_account_tables_user"/>
+	</data>
+</odoo>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="view_account_type_close_form" model="ir.ui.view">
+		<field name="name">account.type.close.form</field>
+		<field name="model">account.type.close</field>
+		<field name="arch" type="xml">
+			<form string="Account Type Close">
+				<sheet>
+					<group>
+						<group>
+							<field name="period_id" requied="1"/>
+						</group>
+						<group>
+							<field name="type_purchase"/>
+							<field name="type_sale"/>
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	<record id="view_account_type_close_list" model="ir.ui.view">
+		<field name="name">account.type.close.list</field>
+		<field name="model">account.type.close</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="period_id" optional="show"/>
+				<field name="type_purchase" optional="show"/>
+				<field name="type_sale" optional="show"/>
+			</tree>
+		</field>
+	</record>
+	<record id="action_account_type_close_form" model="ir.actions.act_window">
+		<field name="name">Tipo de Cambio Cierre</field>
+		<field name="res_model">account.type.close</field>
+		<field name="view_mode">tree,form</field>
+		<field name="view_id" ref="view_account_type_close_list"/>
+		<field name="help" type="html">
+		  <p class="o_view_nocontent_smiling_face">
+			Crea tu primera tabla de Tipo de Cambio Cierre aqui
+		  </p>
+		</field>
+	</record>
+</odoo>

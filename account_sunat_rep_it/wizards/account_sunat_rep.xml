@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="view_account_compras_81_rep_form">
+			<field name="name">account.compras.81.rep.form</field>
+			<field name="model">account.sunat.rep</field>
+			<field name="arch" type="xml">
+				<form string="PLE Compras 8.1">
+						<group>
+							<group>
+								<field name="company_id"/>
+								<field name="exercise"/>
+								<field name="period" domain="[('fiscal_year_id','=',exercise)]"/>
+							</group>
+						</group>
+						<footer>
+							<button string="Generar TXT" name="get_txt_81" type="object" class="oe_highlight"/>
+							<button string="Generar XLS" name="get_excel_81" type="object" class="oe_highlight"/>
+							or
+							<button string="Cancel" class="oe_link" special="cancel"/>
+						</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_account_compras_82_rep_form">
+			<field name="name">account.compras.82.rep.form</field>
+			<field name="model">account.sunat.rep</field>
+			<field name="arch" type="xml">
+				<form string="PLE Compras 8.2">
+						<group>
+							<group>
+								<field name="company_id"/>
+								<field name="exercise"/>
+								<field name="period" domain="[('fiscal_year_id','=',exercise)]"/>
+							</group>
+						</group>
+						<footer>
+							<button string="Generar TXT" name="get_txt_82" type="object" class="oe_highlight"/>
+							<button string="Generar XLS" name="get_excel_82" type="object" class="oe_highlight"/>
+							or
+							<button string="Cancel" class="oe_link" special="cancel"/>
+						</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_account_ventas_141_rep_form">
+			<field name="name">account.ventas.141.rep.form</field>
+			<field name="model">account.sunat.rep</field>
+			<field name="arch" type="xml">
+				<form string="PLE Ventas 14.1">
+						<group>
+							<group>
+								<field name="company_id"/>
+								<field name="exercise"/>
+								<field name="period" domain="[('fiscal_year_id','=',exercise)]"/>
+							</group>
+						</group>
+						<footer>
+							<button string="Generar TXT" name="get_txt_141" type="object" class="oe_highlight"/>
+							<button string="Generar XLS" name="get_excel_141" type="object" class="oe_highlight"/>
+							or
+							<button string="Cancel" class="oe_link" special="cancel"/>
+						</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_account_sunat_diario_rep_form">
+			<field name="name">account.sunat.diario.rep.form</field>
+			<field name="model">account.sunat.rep</field>
+			<field name="arch" type="xml">
+				<form string="PLE Libro Diario">
+						<group>
+							<group>
+								<field name="company_id"/>
+								<field name="exercise"/>
+								<field name="period" domain="[('fiscal_year_id','=',exercise)]"/>
+							</group>
+						</group>
+						<footer>
+							<button string="Generar TXT" name="get_txt_diario" type="object" class="oe_highlight"/>
+							<button string="Generar XLS" name="get_excel_diario" type="object" class="oe_highlight"/>
+							or
+							<button string="Cancel" class="oe_link" special="cancel"/>
+						</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_account_sunat_plan_contable_rep_form">
+			<field name="name">account.sunat.plan.contable.rep.form</field>
+			<field name="model">account.sunat.rep</field>
+			<field name="arch" type="xml">
+				<form string="PLE Plan Contable">
+						<group>
+							<group>
+								<field name="company_id"/>
+								<field name="exercise"/>
+								<field name="period" domain="[('fiscal_year_id','=',exercise)]"/>
+							</group>
+						</group>
+						<footer>
+							<button string="Generar TXT" name="get_txt_plan_c" type="object" class="oe_highlight"/>
+							<button string="Generar XLS" name="get_excel_plan_c" type="object" class="oe_highlight"/>
+							or
+							<button string="Cancel" class="oe_link" special="cancel"/>
+						</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_account_sunat_mayor_rep_form">
+			<field name="name">account.sunat.mayor.rep.form</field>
+			<field name="model">account.sunat.rep</field>
+			<field name="arch" type="xml">
+				<form string="PLE Mayor">
+						<group>
+							<group>
+								<field name="company_id"/>
+								<field name="exercise"/>
+								<field name="period" domain="[('fiscal_year_id','=',exercise)]"/>
+							</group>
+						</group>
+						<footer>
+							<button string="Generar TXT" name="get_txt_mayor" type="object" class="oe_highlight"/>
+							<button string="Generar XLS" name="get_excel_mayor" type="object" class="oe_highlight"/>
+							or
+							<button string="Cancel" class="oe_link" special="cancel"/>
+						</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_account_sunat_servidores_rep_form">
+			<field name="name">account.sunat.servidores.rep.form</field>
+			<field name="model">account.sunat.rep</field>
+			<field name="arch" type="xml">
+				<form string="Servidores">
+						<group>
+							<group>
+								<field name="company_id"/>
+								<field name="exercise"/>
+								<field name="period" domain="[('fiscal_year_id','=',exercise)]"/>
+							</group>
+						</group>
+						<footer>
+							<button string="Generar PS4" name="get_txt_servidores" type="object" class="oe_highlight"/>
+							<button string="Generar XLS" name="get_excel_servidores" type="object" class="oe_highlight"/>
+							or
+							<button string="Cancel" class="oe_link" special="cancel"/>
+						</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_account_sunat_recibos_rep_form">
+			<field name="name">account.sunat.recibos.rep.form</field>
+			<field name="model">account.sunat.rep</field>
+			<field name="arch" type="xml">
+				<form string="Recibos">
+						<group>
+							<group>
+								<field name="company_id"/>
+								<field name="exercise"/>
+								<field name="period" domain="[('fiscal_year_id','=',exercise)]"/>
+							</group>
+						</group>
+						<footer>
+							<button string="Generar 4TA" name="get_txt_recibos" type="object" class="oe_highlight"/>
+							<button string="Generar XLS" name="get_excel_recibos" type="object" class="oe_highlight"/>
+							or
+							<button string="Cancel" class="oe_link" special="cancel"/>
+						</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="account_compras_81_rep_action" model="ir.actions.act_window">
+			<field name="name">PLE Compras 8.1</field>
+			<field name="res_model">account.sunat.rep</field>
+			<field name="view_mode">form</field>
+			<field name="view_ids"
+				   eval="
+							[
+							(5, 0, 0),
+							(0, 0, {'view_mode': 'form', 'view_id': ref('view_account_compras_81_rep_form')}),
+							(0, 0, {'view_mode': 'kanban'})
+						  ]"
+			/>
+			<field name="target">new</field>
+		</record>
+
+		<record id="account_compras_82_rep_action" model="ir.actions.act_window">
+			<field name="name">PLE Compras 8.2</field>
+			<field name="res_model">account.sunat.rep</field>
+			<field name="view_mode">form</field>
+			<field name="view_ids"
+				   eval="
+							[
+							(5, 0, 0),
+							(0, 0, {'view_mode': 'form', 'view_id': ref('view_account_compras_82_rep_form')}),
+							(0, 0, {'view_mode': 'kanban'})
+						  ]"
+			/>
+			<field name="target">new</field>
+		</record>
+
+		<record id="account_ventas_141_rep_action" model="ir.actions.act_window">
+			<field name="name">PLE Ventas 14.1</field>
+			<field name="res_model">account.sunat.rep</field>
+			<field name="view_mode">form</field>
+			<field name="view_ids"
+				   eval="
+							[
+							(5, 0, 0),
+							(0, 0, {'view_mode': 'form', 'view_id': ref('view_account_ventas_141_rep_form')}),
+							(0, 0, {'view_mode': 'kanban'})
+						  ]"
+			/>
+			<field name="target">new</field>
+		</record>
+
+		<record id="account_sunat_diario_rep_action" model="ir.actions.act_window">
+			<field name="name">PLE Libro Diario</field>
+			<field name="res_model">account.sunat.rep</field>
+			<field name="view_mode">form</field>
+			<field name="view_ids"
+				   eval="
+							[
+							(5, 0, 0),
+							(0, 0, {'view_mode': 'form', 'view_id': ref('view_account_sunat_diario_rep_form')}),
+							(0, 0, {'view_mode': 'kanban'})
+						  ]"
+			/>
+			<field name="target">new</field>
+		</record>
+
+		<record id="account_sunat_plan_contable_rep_action" model="ir.actions.act_window">
+			<field name="name">PLE Plan Contable</field>
+			<field name="res_model">account.sunat.rep</field>
+			<field name="view_mode">form</field>
+			<field name="view_ids"
+				   eval="
+							[
+							(5, 0, 0),
+							(0, 0, {'view_mode': 'form', 'view_id': ref('view_account_sunat_plan_contable_rep_form')}),
+							(0, 0, {'view_mode': 'kanban'})
+						  ]"
+			/>
+			<field name="target">new</field>
+		</record>
+
+		<record id="account_sunat_mayor_rep_action" model="ir.actions.act_window">
+			<field name="name">PLE Mayor</field>
+			<field name="res_model">account.sunat.rep</field>
+			<field name="view_mode">form</field>
+			<field name="view_ids"
+				   eval="
+							[
+							(5, 0, 0),
+							(0, 0, {'view_mode': 'form', 'view_id': ref('view_account_sunat_mayor_rep_form')}),
+							(0, 0, {'view_mode': 'kanban'})
+						  ]"
+			/>
+			<field name="target">new</field>
+		</record>
+
+		<record id="account_sunat_servidores_rep_action" model="ir.actions.act_window">
+			<field name="name">Servidores</field>
+			<field name="res_model">account.sunat.rep</field>
+			<field name="view_mode">form</field>
+			<field name="view_ids"
+				   eval="
+							[
+							(5, 0, 0),
+							(0, 0, {'view_mode': 'form', 'view_id': ref('view_account_sunat_servidores_rep_form')}),
+							(0, 0, {'view_mode': 'kanban'})
+						  ]"
+			/>
+			<field name="target">new</field>
+		</record>
+
+		<record id="account_sunat_recibos_rep_action" model="ir.actions.act_window">
+			<field name="name">Recibos</field>
+			<field name="res_model">account.sunat.rep</field>
+			<field name="view_mode">form</field>
+			<field name="view_ids"
+				   eval="
+							[
+							(5, 0, 0),
+							(0, 0, {'view_mode': 'form', 'view_id': ref('view_account_sunat_recibos_rep_form')}),
+							(0, 0, {'view_mode': 'kanban'})
+						  ]"
+			/>
+			<field name="target">new</field>
+		</record>
+
+		<menuitem action="account_compras_81_rep_action" 
+				id="menu_finance_sunat_compras_81" 
+				parent="account_sunat_rep_it.menu_finance_sunat" 
+				sequence="1" 
+				groups="account_base_it.group_account_tables_user"/>
+
+		<menuitem action="account_compras_82_rep_action" 
+				id="menu_finance_sunat_compras_82" 
+				parent="account_sunat_rep_it.menu_finance_sunat" 
+				sequence="2" 
+				groups="account_base_it.group_account_tables_user"/>
+
+		<menuitem action="account_ventas_141_rep_action" 
+				id="menu_finance_sunat_ventas_141" 
+				parent="account_sunat_rep_it.menu_finance_sunat" 
+				sequence="3" 
+				groups="account_base_it.group_account_tables_user"/>
+
+		<menuitem action="account_sunat_diario_rep_action" 
+				id="menu_finance_sunat_diario" 
+				parent="account_sunat_rep_it.menu_finance_sunat" 
+				sequence="4" 
+				groups="account_base_it.group_account_tables_user"/>
+
+		<menuitem action="account_sunat_plan_contable_rep_action" 
+				id="menu_finance_sunat_plan_contable" 
+				parent="account_sunat_rep_it.menu_finance_sunat" 
+				sequence="5" 
+				groups="account_base_it.group_account_tables_user"/>
+
+		<menuitem action="account_sunat_mayor_rep_action" 
+				id="menu_finance_sunat_mayor" 
+				parent="account_sunat_rep_it.menu_finance_sunat" 
+				sequence="6" 
+				groups="account_base_it.group_account_tables_user"/>
+
+		<menuitem action="account_sunat_servidores_rep_action" 
+				id="menu_finance_sunat_servidores" 
+				parent="account_sunat_rep_it.menu_finance_sunat" 
+				sequence="7" 
+				groups="account_base_it.group_account_tables_user"/>
+
+		<menuitem action="account_sunat_recibos_rep_action" 
+				id="menu_finance_sunat_recibos" 
+				parent="account_sunat_rep_it.menu_finance_sunat" 
+				sequence="8" 
+				groups="account_base_it.group_account_tables_user"/>
+	</data>
+</odoo>

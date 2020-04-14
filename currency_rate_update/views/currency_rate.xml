@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="view_base_curreny_rate_tree_inherit" model="ir.ui.view">
+			<field name="name">base.currency.rate.tree.inherit</field>
+			<field name="model">res.currency.rate</field>
+			<field name="inherit_id" ref="base.view_currency_rate_tree"/>
+			<field name="arch" type="xml">
+				<data>
+					<field name="name" position="after">
+						<field name="sale_type"/>
+						<field name="purchase_type"/>
+					</field>
+				</data>
+			</field>
+		</record>
+		<record id="view_base_currency_rate_list" model="ir.ui.view">
+			<field name="name">base.currency.rate.list</field>
+			<field name="model">res.currency.rate</field>
+			<field name="arch" type="xml">
+				<tree edit="0" create="0" delete="0">
+					<field name="name" optional="show"/>
+					<field name="sale_type" optional="show"/>
+					<field name="purchase_type" optional="show"/>
+				</tree>
+			</field>
+		</record>
+		<record id="view_base_currency_rate_formm" model="ir.actions.act_window">
+			<field name="name">Tipos de Cambio</field>
+			<field name="res_model">res.currency.rate</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref="view_base_currency_rate_list"/>
+		</record>
+
+		<menuitem action="currency_rate_update.view_base_currency_rate_formm" id="menu_action_currency_rate_list" parent="account.menu_finance_reports"/>
+	</data>
+</odoo>

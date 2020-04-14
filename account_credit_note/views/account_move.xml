@@ -1,0 +1,11 @@
+<odoo>
+	<data>
+		<record id="replace_lines_fr_account_move" model="ir.actions.server">
+			<field name="name">Reemplazar Lineas FR</field>
+			<field name="model_id" ref="account.model_account_move"/>
+			<field name="binding_model_id" ref="account.model_account_move"/>
+			<field name="state">code</field>
+			<field name="code">action = records.replace_lines_fr()</field>
+		</record>
+	</data>
+</odoo>
